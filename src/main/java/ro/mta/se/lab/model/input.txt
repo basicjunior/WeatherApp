@@ -3,3 +3,5 @@ ID              nm		    lat		        lon		    countryCode
 524901	        Moscow	    55.752220       37.615555	RU
 2973393	        Tarascon	43.805828       4.660280	FR
 2986678	        Ploufragan	48.491409       -2.794580	FR
+2986678	        Bucharest	48.491409       -2.794580	RO
+2986678	        Ploiesti	48.491409       -2.794580	RO

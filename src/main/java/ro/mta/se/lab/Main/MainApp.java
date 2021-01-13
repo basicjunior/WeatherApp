@@ -45,6 +45,7 @@ public class MainApp extends Application {
         buffer.close();
     }
 
+
     public void start(Stage primaryStage) throws IOException{
         initializeLocations();
         FXMLLoader loader = new FXMLLoader();
