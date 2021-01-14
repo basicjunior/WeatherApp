@@ -12,6 +12,7 @@ import ro.mta.se.lab.model.WeatherLocation;
 import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class WeatherController {
@@ -102,6 +103,24 @@ public class WeatherController {
         });
     }
 
+    static public String getTempAsInt(Float temp){
+        String intTemp = String.valueOf(temp - temp%1);
+        //DecimalFormat df = new DecimalFormat("0.#");
+        return (intTemp  + " \u2103");
+    }
+
+    static public String getWindSpeedAsInt(Float windSpeed){
+        String intWind = String.valueOf(windSpeed - windSpeed%1);
+
+        return (intWind + " km/h");
+    }
+
+    static public String getHumidityAsInt(Float humidity){
+        String intHumidity = String.valueOf(humidity - humidity%1);
+
+        return (intHumidity + " %");
+    }
+
     public void APIrequest(String cityName) throws IOException {
         String urlString = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=metric"
                 + "&appid=7b3f7e6b8294c79eac5273ac52cfc673";
@@ -119,7 +138,7 @@ public class WeatherController {
 
         JsonObject obj = Json.parse(res.toString()).asObject().get("main").asObject();
         Float temp = obj.get("temp").asFloat();
-        Integer humidity2 = obj.get("humidity").asInt();
+        Float humidity2 = obj.get("humidity").asFloat();
         JsonObject wObj = Json.parse(res.toString()).asObject().get("wind").asObject();
         Float windSpeed = wObj.get("speed").asFloat();
         String current = "";
@@ -128,9 +147,9 @@ public class WeatherController {
             current = item.asObject().getString("main", "Unknown");
 
 
-        temperature.setText(temp.toString());
-        wind.setText(windSpeed.toString());
-        humidity.setText(humidity2.toString());
+        temperature.setText(getTempAsInt(temp));
+        wind.setText(getWindSpeedAsInt(windSpeed));
+        humidity.setText(getHumidityAsInt(humidity2));
         currentWeather.setText(current);
 
         FileWriter fw = new FileWriter("src/main/java/ro/mta/se/lab/model/logger.txt", true);
