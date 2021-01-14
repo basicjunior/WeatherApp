@@ -8,12 +8,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import ro.mta.se.lab.model.Logger;
 import ro.mta.se.lab.model.WeatherLocation;
 import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
+
 
 public class WeatherController {
 
@@ -42,7 +43,8 @@ public class WeatherController {
     @FXML
     private TextField currentWeather;
 
-    public String APIarg;
+    public String API_arg;
+
     public WeatherController(ArrayList<WeatherLocation> locations) {
         this.locations = locations;
     }
@@ -51,6 +53,7 @@ public class WeatherController {
     private void initialize() throws IOException {
 
         int find = 1;
+        Logger log = new Logger();
 
         CityName.setValue("Choose a city");
         CountryCode.setValue("Choose a Country Code");
@@ -86,7 +89,7 @@ public class WeatherController {
             if (name.equals("Choose city") || name2.equals("Choose a Country Code"))
                 return;
 
-            APIarg = name;
+            API_arg = name;
 
         });
 
@@ -94,7 +97,7 @@ public class WeatherController {
             @Override
             public void handle(ActionEvent actionEvent) {
                 try {
-                    APIrequest(APIarg);
+                    APIrequest(API_arg, log);
 
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -121,7 +124,14 @@ public class WeatherController {
         return (intHumidity + " %");
     }
 
-    public void APIrequest(String cityName) throws IOException {
+    public void setValues(Float a, Float b, Float c, String d){
+        temperature.setText(getTempAsInt(a));
+        wind.setText(getWindSpeedAsInt(b));
+        humidity.setText(getHumidityAsInt(c));
+        currentWeather.setText(d);
+    }
+
+    public String APIrequest(String cityName, Logger log) throws IOException {
         String urlString = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=metric"
                 + "&appid=7b3f7e6b8294c79eac5273ac52cfc673";
 
@@ -146,20 +156,11 @@ public class WeatherController {
         for (JsonValue item : items)
             current = item.asObject().getString("main", "Unknown");
 
+        setValues(temp ,windSpeed,humidity2, current);
 
-        temperature.setText(getTempAsInt(temp));
-        wind.setText(getWindSpeedAsInt(windSpeed));
-        humidity.setText(getHumidityAsInt(humidity2));
-        currentWeather.setText(current);
+        String test = log.appendMessage(cityName);
 
-        FileWriter fw = new FileWriter("src/main/java/ro/mta/se/lab/model/logger.txt", true);
-        BufferedWriter bw = new BufferedWriter(fw);
-
-        bw.write("User searched for informations on city: " + cityName);
-        bw.newLine();
-        bw.close();
-
-
+        return test;
     }
 
 }

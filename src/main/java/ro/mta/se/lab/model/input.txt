@@ -5,3 +5,7 @@ ID              nm		    lat		        lon		    countryCode
 2986678	        Ploufragan	48.491409       -2.794580	FR
 2986678	        Bucharest	48.491409       -2.794580	RO
 2986678	        Ploiesti	48.491409       -2.794580	RO
+2562305         Valletta    35.8997         14.5147     MT
+2562746         Mdina       35.8869         14.4025     MT
+3054643         Budapest    47.498          19.0399     HU
+721239          Eger        47.9026         20.3733     HU
