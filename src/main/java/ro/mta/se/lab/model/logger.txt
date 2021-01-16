@@ -89,3 +89,10 @@ User searched for information on city: Mdina
 User searched for information on city: Mdina
 User searched for information on city: Mdina
 User searched for information on city: Tarascon
+User searched for information on city: Ploufragan
+User searched for information on city: Ploufragan
+User searched for information on city: Bucharest
+User searched for information on city: Ploiesti
+User searched for information on city: Budapest
+User searched for information on city: Budapest
+User searched for information on city: Eger
