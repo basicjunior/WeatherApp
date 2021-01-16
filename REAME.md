@@ -12,7 +12,7 @@ Dependencies:<br/>
 Add content respecting the input.txt file format.<br/>
 Start application and chooose a Country and a City from the dropdowns.<br/>
 Make sure you have a working network connection.<br/>
-Enjoy getting the information about diffrent locations with just the click of a button :yum:<br/>
+Enjoy getting the information about diffrent locations with just the click of a button<br/>
 
 ## Testing
 :checkered_flag:Already implemented test methods inside the project files for UnitTesting.<br/>
