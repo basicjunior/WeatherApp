@@ -12,15 +12,15 @@ Dependencies:<br/>
 Add content respecting the input.txt file format.<br/>
 Start application and chooose a Country and a City from the dropdowns.<br/>
 Make sure you have a working network connection.<br/>
-Enjoy getting the information about diffrent locations with just the click of a button :yum:<br/>
+Enjoy getting the information about diffrent locations with just the click of a button<br/>
 
 ## Testing
 :checkered_flag:Already implemented test methods inside the project files for UnitTesting.<br/>
 and mock testing using Mockito.
 
-:exclamation: `In order to run the tests easily add a comment in front on line 159 from file Weather controller` :wink:
+:exclamation: `In order to run the tests easily add a comment in front on line 159 in the WeatherController class` :wink:
 
-## Language used :rainbow:
+## Language used
 JAVA JDK 15 :heavy_check_mark:
 
 ## Developer
