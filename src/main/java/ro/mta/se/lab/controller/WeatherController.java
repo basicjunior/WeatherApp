@@ -18,7 +18,26 @@ import java.util.ArrayList;
 
 public class WeatherController {
 
-
+    /**
+     *
+     * @CountryCode and
+     * @CityName are the two ChoiceBoxes used in Scene Builder
+     *
+     * @WeatherLocation is an object built from reading the input.txt file
+     *
+     * The app creates a WeatherController object based on a list of WeatherLocation
+     *
+     * @Logger is a separate class designed to facilitate the creation of personalisez logged messages
+     *
+     * @get*AsInt are simple functions designed to ease the process of UnitTesting
+     *
+     *
+     * @ApiRequest function uses the selected CityName to request the current weather information
+     *
+     * The information returned is parsed using the minimal-json library
+     *
+     *
+     */
 
     private ArrayList<WeatherLocation> locations;
 

@@ -4,6 +4,10 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * Class created for future editing
+ */
+
 public class Logger {
     private String message;
 

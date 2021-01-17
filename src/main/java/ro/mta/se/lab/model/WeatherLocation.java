@@ -3,6 +3,11 @@ package ro.mta.se.lab.model;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+/**
+ * @WeatherLocation is a class designed for
+ */
+
+
 public class WeatherLocation {
 
     StringProperty countryCode;

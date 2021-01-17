@@ -96,3 +96,8 @@ User searched for information on city: Ploiesti
 User searched for information on city: Budapest
 User searched for information on city: Budapest
 User searched for information on city: Eger
+User searched for information on city: Ploiesti
+User searched for information on city: Moscow
+User searched for information on city: Eger
+User searched for information on city: Bucharest
+User searched for information on city: Ploiesti

@@ -2,20 +2,22 @@ package ro.mta.se.lab.Main;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.ChoiceBox;
 import ro.mta.se.lab.controller.WeatherController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import ro.mta.se.lab.model.WeatherLocation;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import static javafx.application.Application.launch;
+/**
+ * @initializeLocations() is used to populate the ChoiceBoxes
+ *
+ *
+ */
 
 public class MainApp extends Application {
     private ObservableList<String> city = FXCollections.observableArrayList();
